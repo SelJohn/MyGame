@@ -22,6 +22,7 @@ public class MyApplicationLike extends DefaultApplicationLike {
     }
     public static final String TAG = "Tinker.SampleApplicationLike";
 
+
     @Override
     public void onCreate() {
         super.onCreate();
