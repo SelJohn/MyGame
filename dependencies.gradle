@@ -1,0 +1,20 @@
+def supportVersion = "27.1.1"
+def constraint = "1.1.2"
+
+
+
+project.ext {
+    android = [
+            applicationId            : "com.cocos.jesse.mygame",
+            minSdkVersion            : 21,
+            targetSdkVersion         : 26,
+            versionCode              : 1,
+            versionName              : "1.0",
+            testInstrumentationRunner: "android.support.test.runner.AndroidJUnitRunner"
+    ]
+    dependencies = [
+            "appcompat-v4":"com.android.support:support-v4:${supportVersion}",
+            "appcompat-v7": "com.android.support:appcompat-v7:${supportVersion}",
+            "constraint":"com.android.support.constraint:constraint-layout:${constraint}"
+    ]
+}
