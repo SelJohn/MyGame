@@ -1,1 +1,1 @@
-include ':app', ':planefightmodule'
+include ':app', ':planefightmodule', ':mymodule', ':serviceclient'

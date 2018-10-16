@@ -23,6 +23,8 @@ public class MyView extends View {
     private float height;
     private Path path;
     private Paint paint;
+    private Paint paintText;
+    private String text;
     private int left;
 
     public MyView(Context context) {
@@ -42,14 +44,25 @@ public class MyView extends View {
         }
     };
 
+    @Override
+    public void setOnClickListener(@Nullable OnClickListener l) {
+        handler.sendEmptyMessage(0x11);
+        super.setOnClickListener(l);
+    }
+
     public MyView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         path = new Path();
         paint = new Paint();
+        paintText = new Paint();
         paint.setStrokeWidth(2);
         paint.setColor(ContextCompat.getColor(context, R.color.colorAccent));
+        paintText.setStrokeWidth(10);
+        paintText.setTextSize(50);
+        paintText.setColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
         TypedArray t = context.obtainStyledAttributes(attrs, R.styleable.MyView);
         height = t.getDimension(R.styleable.MyView_height_my_view, 1);
+        text = t.getString(R.styleable.MyView_text_my_view);
         t.recycle();
     }
 
@@ -68,7 +81,7 @@ public class MyView extends View {
             path.moveTo(left, 0);
         else left -= 500;
         path.cubicTo(100, 0, 200, 200, 300, 300);
-        handler.sendEmptyMessage(0x11);
         canvas.drawPath(path, paint);
+        canvas.drawText(text, 0, 200, paintText);
     }
 }

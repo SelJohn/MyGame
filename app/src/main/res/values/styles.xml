@@ -10,5 +10,6 @@
 
     <declare-styleable name="MyView">
         <attr name="height_my_view" format="dimension"/>
+        <attr name="text_my_view" format="string"/>
     </declare-styleable>
 </resources>
