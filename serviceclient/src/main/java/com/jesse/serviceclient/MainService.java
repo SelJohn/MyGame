@@ -14,4 +14,13 @@ public class MainService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        /*
+         * 请求位置信息
+         */
+        // TODO: 2018/10/16
+    }
 }
